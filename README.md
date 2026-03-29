@@ -131,37 +131,28 @@ This project is for learning/demo purposes. You may modify and use it freely.
 
 ---
 
-## 🇬🇧 English + 🇮🇳 తెలుగు (Telugu)
 
-### What this app does / ఈ app ఏమి చేస్తుంది
-- **English**: Shows real-time weather (temperature, humidity, condition) for any city using OpenWeatherMap API.
-- **Telugu**: ఈ app OpenWeatherMap API ఉపయోగించి ఏ city కి అయినా real-time weather (temperature, humidity, condition) చూపిస్తుంది.
 
-### Setup steps / సెటప్ స్టెప్స్
-- **English**:
-  1) Create venv → activate → `pip install requests`
-  2) Put your API key in `weather_app.py`
-  3) Run `python weather_app.py`
-- **Telugu**:
-  1) venv create చేసి activate చేయండి → `pip install requests`
-  2) మీ API key ని `weather_app.py` లో పెట్టండి
-  3) `python weather_app.py` run చేయండి
+### What this app does
+- Shows real-time weather (temperature, humidity, condition) for any city using OpenWeatherMap API.
 
-### Demo mode / డెమో మోడ్
-- **English**: No key? The app shows sample weather so you can test UI.
-- **Telugu**: API key లేకపోయినా, app demo data చూపిస్తుంది, UI ని test చేయవచ్చు.
+### Setup steps
+1) Create venv → activate → `pip install requests`  
+2) Put your API key in `weather_app.py`  
+3) Run `python weather_app.py`
 
-### Common errors / సాధారణ errors
-- **Invalid API Key** → Put correct key and wait few minutes after signup.
-- **City not found** → City spelling check చేయండి.
-- **requests not installed** → `pip install requests`.
+### Demo mode
+- No key? The app shows sample weather so you can test UI.
+
+### Common errors
+- Invalid API Key → Put correct key and wait few minutes after signup.
+- City not found → Check city spelling.
+- requests not installed → `pip install requests`.
 
 ---
 
-## 💼 Resume Snippet
+## Resume Snippet
 - Built a Python web-based Weather App using Flask and `requests`, integrating OpenWeatherMap’s REST API. Implemented robust error handling, demo mode (no key required), and a modern, colorful browser UI. Demonstrated skills in web development, HTTP/JSON processing, and dependency management with virtual environments.
-
-**Telugu**: Flask మరియు `requests` ఉపయోగించి Python లో web-based Weather App తయారు చేసాను. OpenWeatherMap REST API integrate చేసి, error handling, demo mode (API key లేకపోయినా), modern colorful browser UI implement చేసాను. Web development, HTTP/JSON processing, virtual environments లో dependency management లో నైపుణ్యం చూపించాను.
 
 
 
