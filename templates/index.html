@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Weather App</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1>Weather App</h1>
+        <p id="current-time" class="current-time"></p>
+      </header>
+
+      <main class="card">
+        <form method="post" class="form">
+          <label for="city">Enter city</label>
+          <div class="input-row">
+            <input
+              id="city"
+              name="city"
+              type="text"
+              placeholder="e.g. Hyderabad, London"
+              value="{{ city or '' }}"
+              autofocus
+              required
+            />
+            <button type="submit">Get Weather</button>
+          </div>
+        </form>
+
+        {% if error %}
+        <div class="alert alert-error">
+          <strong>Error:</strong> {{ error }}
+        </div>
+        {% endif %}
+
+        {% if weather %}
+        <section class="result">
+          <h2>{{ weather.city }}</h2>
+          <div class="result-grid">
+            <div class="metric">
+              <span class="label">Temperature</span>
+              <span class="value">{{ "%.1f"|format(weather.temperature) }} °C</span>
+            </div>
+            <div class="metric">
+              <span class="label">Feels Like</span>
+              <span class="value">{{ "%.1f"|format(weather.feels_like) }} °C</span>
+            </div>
+            <div class="metric">
+              <span class="label">Humidity</span>
+              <span class="value">{{ weather.humidity }}%</span>
+            </div>
+            <div class="metric">
+              <span class="label">Wind Speed</span>
+              <span class="value">{{ "%.1f"|format(weather.wind_speed) }} m/s</span>
+            </div>
+            <div class="metric">
+              <span class="label">Pressure</span>
+              <span class="value">{{ weather.pressure }} hPa</span>
+            </div>
+            <div class="metric">
+              <span class="label">Min / Max</span>
+              <span class="value"
+                >{{ "%.1f"|format(weather.temp_min) }} °C / {{ "%.1f"|format(weather.temp_max) }}
+                °C</span
+              >
+            </div>
+          </div>
+        </section>
+        {% else %}
+        <p class="hint">Type a city name above and click <strong>Get Weather</strong>.</p>
+        {% endif %}
+
+      </main>
+
+      <footer class="footer"></footer>
+    </div>
+    <script>
+      function updateCurrentTime() {
+        const el = document.getElementById("current-time");
+        if (!el) return;
+        const now = new Date();
+        const options = {
+          year: "numeric",
+          month: "short",
+          day: "2-digit",
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+        };
+        el.textContent = now.toLocaleString(undefined, options);
+      }
+      updateCurrentTime();
+      setInterval(updateCurrentTime, 1000);
+    </script>
+  </body>
+</html>
+
